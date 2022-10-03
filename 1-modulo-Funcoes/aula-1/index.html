@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funções literai de primeira classe e callbacks</title>
+
+  <script>
+    //função literal
+    function somar(n1, n2) {
+      return n1 + n2
+    }
+    let soma = somar(10 , 20);
+    console.log('resultado funcao literal', soma);
+
+    //posso colocar uma prop na função
+    somar.teste = 'javascript'
+    console.log( somar.teste);
+    //funcao anonima
+
+    var funcAnonima = function(str) {
+      console.log('teste funcao anonima', str);
+    };
+
+    funcAnonima('ola');
+
+    var funcParametro = function(f) {
+      f();
+    };
+
+    funcParametro(function() {
+      console.log('função passada por parametro')
+    })
+
+    console.log('escopo de variavel -------------- escopo de variavel');
+
+    var x = 0;
+
+    function mostraX() {
+      var x = 10//escopo local
+      console.log("mostra x:", x);
+    }
+
+    mostraX();
+
+    console.log("mostra x:", x);
+   
+  </script>
+</head>
+<body>
+  <h1>Curso de Javascript completo</h1>
+</body>
+</html>
