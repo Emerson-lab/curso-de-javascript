@@ -92,7 +92,7 @@
         var linhaAluno = trs[x];
         var tds = linhaAluno.querySelectorAll('td');
         var notas = recuperarNumerosDeColunas(tds);
-        var media = calcularMedia.apply( this, notas);
+        var media = calcularMedia.apply(this, notas);
 
         linhaAluno.querySelector('.aluno-m').textContent = media
         x++
