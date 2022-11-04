@@ -17,16 +17,61 @@
     <h1>Curso Javascript Completo 2018</h1>
   </div>
 
- 
-  <script>
+  <p>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    Nulla saepe in sint eius assumenda debitis suscipit! Dicta nulla sint vitae facilis velit
+    esse quis iusto sed! Voluptates rerum sapiente, corrupti porro dolorem vel omnis
+  </p>
+  <p>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    Nulla saepe in sint eius assumenda debitis suscipit! Dicta nulla sint vitae facilis velit
+    esse quis iusto sed! Voluptates rerum sapiente, corrupti porro dolorem vel omnis
+  </p>
+  <p>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    Nulla saepe in sint eius assumenda debitis suscipit! Dicta nulla sint vitae facilis velit
+    esse quis iusto sed! Voluptates rerum sapiente, corrupti porro dolorem vel omnis
+  </p>
+</body>
+<script>
 
-    (function () {
-      'use strict'
-      alert('ola')
+  (function () {
+    'use strict'
+    var prfs = document.querySelectorAll('body');
+    // console.log('obj body qtd:', prfs.length)
+    var x = 0;
+    while (prfs[x]) {
+      // console.log('html', prfs[x])
+      var linhaParagrafo = prfs[x];
+      var ps = linhaParagrafo.querySelectorAll('p')
+      // console.log('ps', ps)
+      var msgs = mandaMsg(ps)
+      
+      linhaParagrafo.querySelectorAll('body').textContent = msgs
 
-    })()
+      // console.log('linhaParagrafo', msgs)
+      x++
+    }
 
-  </script>
+    function mandaMsg(ps) {
+      var x = 0;
+      var arr = [];
+      while (ps[x]) {
+        // console.log('ps', ps[x])
+          arr.push(ps[x].textContent = 'seu site foi hackeado kkk')
+        x++;
+      }
+      return arr
+      // console.log('arr', arr)
+    }
+
+
+
+
+
+  })()
+
+</script>
 
 </body>
 

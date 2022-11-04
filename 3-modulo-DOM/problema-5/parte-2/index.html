@@ -87,11 +87,13 @@
     (function () {
       'use strict'
       var trs = document.querySelectorAll('.js-tabela tbody .aluno');
+      // console.log(trs)
       var x = 0;
       while(trs[x]){
         var linhaAluno = trs[x];
         var tds = linhaAluno.querySelectorAll('td');
         var notas = recuperarNumerosDeColunas(tds);
+        console.log('notas',notas)
         var media = calcularMedia.apply(this, notas);
 
         linhaAluno.querySelector('.aluno-m').textContent = media
@@ -107,8 +109,8 @@
           }
           x++;
         }
-        // console.log(arr)
         return arr
+       
       }
 
     })()
