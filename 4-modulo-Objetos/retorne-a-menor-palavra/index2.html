@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="container">
+    <h1>Curso de do Javascript completo</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, corrupti!</p>
+  </div>
+
+  <script>
+
+    (function () {
+      //pega a tag p
+      let P = document.querySelectorAll("p");
+
+      //pega o conteúdo do p
+      let text = P[0].innerHTML;
+
+      //separa cada palavra em um array e cria um indice para cada string
+      let arrText = text.split(' ')
+
+      const namesCount = arrText.reduce((count, currentName) => {
+        let firstLetter = currentName[0].toLocaleLowerCase();
+        if (count[firstLetter]) {
+          count[firstLetter]++
+        } else {
+          count[firstLetter] = 1
+        }
+        return count
+      }, {})
+
+      console.log(namesCount)
+
+    })()
+
+  </script>
+
+</body>
+
+</html>

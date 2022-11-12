@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="container">
+    <h1>Curso de do Javascript completo</h1>
+  </div>
+
+  <script>
+
+    (function () {
+      //pega a tag h1
+      let H1 = document.querySelectorAll("h1");
+
+      //pega o conteúdo do h1
+      let text = H1[0].innerHTML;
+
+      //separa cada palavra em um array e cria um indice para cada string
+      let arrText = text.split(' ');
+
+      let x = 0;
+      let arrWord = [];
+      let arrNumbersPerWord = [];
+      let arrMinNumbersPerWord = [];
+      while (arrText[x]) {
+        // retorna todas as palavras
+        var allStrings = arrText[x];
+
+        //insere todas as palvaras em um array
+        arrWord.push(allStrings);
+
+        //gera um array com a qtd de numeros por palavra
+        var numberOfLettersPerWords = arrText[x].length;
+        arrNumbersPerWord.push(numberOfLettersPerWords);
+
+        x++
+      }
+      //pega a palavra com a menor qtd de letras
+      var minNumbersPerWord = Math.min(...arrNumbersPerWord);
+      //insere no array
+      arrMinNumbersPerWord.push(minNumbersPerWord);
+
+      //pega a menor palvra do arrayWord 
+      var filterSmallerWord = arrWord.filter(item => item.length == arrMinNumbersPerWord);
+
+      //se tiverem duas palavras de tamanhos iguais, mostra a primeira
+      if (filterSmallerWord.length == filterSmallerWord.length) {
+        console.log(filterSmallerWord[0]);
+      }
+
+    })()
+
+  </script>
+
+</body>
+
+</html>
